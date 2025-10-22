@@ -19,7 +19,7 @@ public class Main {
         MyList list1 = new MyList();
         list1.addLast(new Student("00x", "Tung", 9.8));
         for (int i = 0; i < 100; i++) {
-            list1.addLast(new Student("00" + i, "Nguyen Van " + i, i));
+            list1.addLast(new Student("00" + i, "Nguyen Van A" + i, i));
         }
 
         list1.treverse();
