@@ -4,7 +4,6 @@
  */
 package prj03;
 
-import jdk.nashorn.internal.objects.annotations.SpecializedFunction;
 /**
  *
  * @author rechiee
@@ -104,13 +103,13 @@ public class MyDoubleLinkedList {
     
     public void traverse(){
         for (Node temp = head ; temp != null ; temp = temp.next){
-            System.out.printl(temp.getInfo());
+            System.out.println(temp.getInfo());
         }
     }
     
     public void traverseReverse(){
         for (Node temp = tail; temp != null; temp = temp.prev){
-            System.out.printl(temp.getInfo());
+            System.out.println(temp.getInfo());
 
         }
     }

@@ -37,20 +37,113 @@ public class MyDoubleLinkedList2 {
         count++;
     }
     
-    public void addFrist(){
+    public void addFrist(Student st){
+        Node newNode= new Node (st , null);
         if(this.isEmpty()){
             return;
         }else{
-            new
+            newNode.next = head;
+            head.prev= newNode;
             
+            head = newNode;
             
         }
+        count++;
     }
     
-     
+    public void removeFirst(){
+        if(this.isEmpty()){
+            return;
+        }
+        if( head != null){
+            head = head.next;
+            if(head != null){
+                head.prev= null;
+            }
+        }
+        if(head == null){
+            tail = null;
+        }
+        count--;
+    }
+    public void remove(int v) {
+        if (this.isEmpty()) {
+            return;
+        }
+        if (v == 0) {
+            removeFirst();
+            return;
+        }
+        if (v == count-1) {
+            removeLast();
+            return;
+        }
+         if (v <0 || v > count-1) {
+            return;
+        }
 
+        Node p = head;
+        // 1. Tim ra node phia truoc
+        for (int i = 0; i < v - 1; i++) {
+            if (p != null) {
+                p = p.next;
+            }
+        }
+        // 2. Thuc hien xoa
+        if (p != null) {
+            Node r = p.next.next;
+            p.next = r;
+            if(r!=null){
+                r.prev = p;
+            }
+            
+            if (r == null) {
+                tail = p;
+            }
+        }
+        count--;
+    }
+
+    public void treverse() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.println(temp.getInfo());
+            temp = temp.next;
+        }
+    }
+    public void treverse2() {
+        Node temp = tail;
+        while (temp != null) {
+            System.out.println(temp.getInfo());
+            temp = temp.prev;
+        }
+    }
+
+//    public int size(){
+//        // Tra ve so phan tu trong list
+//        int count = 0;
+//        Node p = head;
+//        while(p!=null){
+//            count++;
+//            p = p.next;
+//        }
+//        return count;
+//    }
+    public int size() {
+        return count;
+    }
     
+    public void add(Student st, int position){
+        // Thêm student tai vi tri position
+    }
     
-    
-    
+    public int countPass(){
+        // Tra ve so luong sinh vien co gpa>=5
+        return 0;
+    }
+    public int find(String studentId){
+        // Muon biet vi tri cua ban sinh vien co studentId
+        // Neu nhu khong tim thay: return -1;
+        return -1;
+    }
 }
