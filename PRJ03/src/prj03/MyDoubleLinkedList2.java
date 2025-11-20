@@ -66,6 +66,27 @@ public class MyDoubleLinkedList2 {
         }
         count--;
     }
+     public void removeLast() {
+        if (this.isEmpty()) {
+            return;
+        }
+        Node p = head;
+        // Neu list chi co 1 phan tu
+        if (p.next == null) {
+            head = null;
+            tail = null;
+        } else {
+            // Neu List co rat nhieu
+            // 1. Tim ra phan tu ke cuoi
+            while (p.next.next != null) {
+                p = p.next;
+            }
+            // 2. Thu hien xoa
+            p.next = null;
+            tail = p;
+        }
+        count--;
+    }
     public void remove(int v) {
         if (this.isEmpty()) {
             return;
