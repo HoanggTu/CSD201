@@ -9,8 +9,8 @@ package BSTree;
  * @author rechiee
  */
 public class Node {
-    int info;
-    Node left, right;
+    private int info;
+    private Node left, right;
 
     public Node() {
     }
@@ -20,6 +20,8 @@ public class Node {
         this.left = left;
         this.right = right;
     }
+    
+    
     
     Node(int x){
         this(x, null,null);
